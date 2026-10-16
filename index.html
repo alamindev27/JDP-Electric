@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDP Electric | Premier Electrical Contractor</title>
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome 6 for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+        }
+
+        /* Custom Animated Electric Glow Mesh Background */
+        .bg-mesh-glow {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.12) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(234, 179, 8, 0.1) 0px, transparent 50%);
+        }
+
+        /* Electric Spark Pulse Keyframes */
+        @keyframes electricPulse {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), inset 0 0 10px rgba(245, 158, 11, 0.2);
+                border-color: rgba(245, 158, 11, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(245, 158, 11, 0.6), inset 0 0 20px rgba(245, 158, 11, 0.4);
+                border-color: rgba(251, 191, 36, 0.9);
+            }
+        }
+
+        .electric-glow {
+            animation: electricPulse 3.5s infinite ease-in-out;
+        }
+
+        /* Floating Light Animation */
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        .animate-float {
+            animation: floatAnim 6s ease-in-out infinite;
+        }
+
+        /* Shimmer text effect */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .text-shimmer {
+            background: linear-gradient(90deg, #f59e0b, #fef08a, #38bdf8, #f59e0b);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            animation: shimmer 5s linear infinite;
+        }
+
+        /* Glassmorphism background */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Animated Hamburger Button to X */
+        .hamburger-line {
+            transition: all 0.3s ease-in-out;
+            transform-origin: center;
+        }
+
+        .menu-open .line-1 {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-open .line-2 {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .menu-open .line-3 {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950 relative overflow-x-hidden bg-mesh-glow">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 text-slate-950 text-xs sm:text-sm font-bold py-2 px-4 shadow-md">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-5">
+                <a href="tel:9524491088" class="hover:underline flex items-center gap-1.5 transition-transform hover:scale-105">
+                    <i class="fa-solid fa-phone-volume"></i> 952.449.1088
+                </a>
+                <a href="mailto:info@jdpelectric.us" class="hover:underline flex items-center gap-1.5 transition-transform hover:scale-105">
+                    <i class="fa-solid fa-envelope"></i> info@jdpelectric.us
+                </a>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="bg-slate-950 text-amber-400 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider shadow">
+                    Licensed & Insured
+                </span>
+                <span class="hidden md:inline text-slate-900 font-medium">90+ Years Combined Mastery</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 backdrop-blur-xl bg-slate-950/80 border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-600 via-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/50 transition-all duration-300 group-hover:rotate-6">
+                    <i class="fa-solid fa-bolt text-slate-950 text-2xl font-black"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-extrabold tracking-tight text-white leading-none">JDP <span class="text-amber-500">Electric</span></span>
+                    <span class="text-[10px] text-slate-400 tracking-widest uppercase font-semibold">Contractor Services</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <a href="#about" class="hover:text-amber-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-amber-400 hover:after:w-full after:transition-all">About JDP</a>
+                <a href="#services" class="hover:text-amber-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-amber-400 hover:after:w-full after:transition-all">Services</a>
+                <a href="#why-us" class="hover:text-amber-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-amber-400 hover:after:w-full after:transition-all">Why Choose Us</a>
+                <a href="#contact" class="hover:text-amber-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-amber-400 hover:after:w-full after:transition-all">Contact</a>
+            </nav>
+
+            <!-- Call to Action & Mobile Hamburger Button -->
+            <div class="flex items-center gap-4">
+                <a href="tel:9524491088" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 text-slate-950 font-extrabold px-5 py-2.5 rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all duration-300">
+                    <i class="fa-solid fa-phone"></i> Call 952.449.1088
+                </a>
+
+                <!-- Mobile Menu Button (Hamburger to X) -->
+                <button id="menuToggleBtn" aria-label="Toggle Navigation Menu" class="lg:hidden w-12 h-12 flex flex-col justify-center items-center gap-1.5 rounded-xl bg-slate-900 border border-slate-800 text-white focus:outline-none hover:border-amber-500/50 transition-colors">
+                    <span class="hamburger-line line-1 w-6 h-0.5 bg-amber-400 rounded-full"></span>
+                    <span class="hamburger-line line-2 w-6 h-0.5 bg-amber-400 rounded-full"></span>
+                    <span class="hamburger-line line-3 w-6 h-0.5 bg-amber-400 rounded-full"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Slide-over Sidebar Drawer -->
+    <div id="mobileBackdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <aside id="mobileSidebar" class="fixed top-0 right-0 w-[85%] max-w-sm h-full bg-slate-900/95 border-l border-slate-800 backdrop-blur-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col justify-between shadow-2xl">
+        <div>
+            <!-- Sidebar Top Header -->
+            <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-9 h-9 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950 font-black">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white">JDP <span class="text-amber-500">Electric</span></span>
+                </div>
+                <button id="closeSidebarBtn" class="w-10 h-10 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center hover:bg-amber-500 hover:text-slate-950 transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Sidebar Navigation Links -->
+            <nav class="mt-8 flex flex-col gap-4 text-lg font-medium">
+                <a href="#about" class="mobile-nav-link text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 px-4 py-3 rounded-xl transition-all flex items-center gap-3">
+                    <i class="fa-solid fa-users text-amber-500 w-5"></i> About JDP
+                </a>
+                <a href="#services" class="mobile-nav-link text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 px-4 py-3 rounded-xl transition-all flex items-center gap-3">
+                    <i class="fa-solid fa-screwdriver-wrench text-amber-500 w-5"></i> Our Services
+                </a>
+                <a href="#why-us" class="mobile-nav-link text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 px-4 py-3 rounded-xl transition-all flex items-center gap-3">
+                    <i class="fa-solid fa-shield-halved text-amber-500 w-5"></i> Why Choose Us
+                </a>
+                <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 px-4 py-3 rounded-xl transition-all flex items-center gap-3">
+                    <i class="fa-solid fa-paper-plane text-amber-500 w-5"></i> Contact & Callback
+                </a>
+            </nav>
+        </div>
+
+        <!-- Sidebar Quick Contact CTA -->
+        <div class="pt-6 border-t border-slate-800">
+            <a href="tel:9524491088" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold py-3.5 rounded-xl shadow-lg shadow-amber-500/20 mb-3">
+                <i class="fa-solid fa-phone"></i> Call 952.449.1088
+            </a>
+            <p class="text-xs text-center text-slate-500">Commercial & Custom Residential Experts</p>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center py-20 overflow-hidden">
+        <!-- Glowing Orbs in Background -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-amber-500/20 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-sky-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-semibold uppercase tracking-widest mb-8 shadow-lg shadow-amber-500/10 animate-float">
+                <i class="fa-solid fa-bolt text-amber-400 text-base"></i> The Woytcke Brothers &bull; 90+ Years Combined Skill
+            </div>
+
+            <!-- Sharp Headline -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight mb-8">
+                Precision Electrical Work <br class="hidden sm:inline">
+                <span class="text-shimmer">Built for Safety & Performance</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-base sm:text-xl text-slate-300 mb-10 leading-relaxed">
+                Specializing in custom home electrical systems, major remodels, complex new construction, and fast diagnostics across Minnesota.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+                <a href="#contact" class="w-full sm:w-auto bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 text-slate-950 font-extrabold text-base px-8 py-4 rounded-xl shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 transition-all duration-300 text-center">
+                    Request Callback <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <a href="tel:9524491088" class="w-full sm:w-auto glass-panel border border-slate-700 hover:border-amber-500/50 text-white font-bold text-base px-8 py-4 rounded-xl hover:bg-slate-900 transition-all duration-300 text-center">
+                    <i class="fa-solid fa-phone text-amber-400 mr-2"></i> 952.449.1088
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Highlights / Stat Badges -->
+    <section class="border-y border-slate-800/80 bg-slate-900/40 py-10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-amber-500/40 transition-all">
+                    <div class="text-amber-400 text-3xl font-black mb-1">Jesse, Dennis & Paul</div>
+                    <div class="text-sm text-slate-300 font-semibold">Founded by The Woytcke Brothers</div>
+                </div>
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-amber-500/40 transition-all">
+                    <div class="text-amber-400 text-3xl font-black mb-1">100% Certified</div>
+                    <div class="text-sm text-slate-300 font-semibold">Licensed, Bonded & Insured Master Electricians</div>
+                </div>
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-amber-500/40 transition-all">
+                    <div class="text-amber-400 text-3xl font-black mb-1">Established 2012</div>
+                    <div class="text-sm text-slate-300 font-semibold">Unmatched Reputation in Construction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest">
+                        About JDP Electric
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-6 leading-tight">
+                        Skill, Integrity, & Custom Workmanship
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        In 2012, Jesse, Dennis, and Paul Woytcke joined forces to launch JDP Electrical Services. Combining over 90 years of cumulative hands-on electrical expertise, they set out to redefine high-end residential and commercial craftsmanship.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        Our team believes that true success comes from never cutting corners. We hand-pick tested, top-tier electrical components to guarantee safety, longevity, and optimal energy efficiency for every project.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <i class="fa-solid fa-circle-check text-amber-400 text-xl"></i>
+                            <span class="font-semibold text-slate-200 text-sm">Custom Electrical Wiring</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <i class="fa-solid fa-circle-check text-amber-400 text-xl"></i>
+                            <span class="font-semibold text-slate-200 text-sm">Strict Safety Inspections</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glowing Interactive Graphic Card -->
+                <div class="relative">
+                    <div class="electric-glow rounded-3xl p-8 sm:p-12 bg-gradient-to-b from-slate-900 to-slate-950 border border-amber-500/30 text-center relative overflow-hidden">
+                        <div class="w-20 h-20 mx-auto rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 text-4xl mb-6 shadow-inner">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Services Within Reach</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            From modern custom home automation & wiring to emergency troubleshooting, JDP Electric delivers prompt and trustworthy service.
+                        </p>
+                        <a href="tel:9524491088" class="inline-flex items-center gap-2 text-amber-400 font-extrabold text-sm hover:text-amber-300 transition-colors">
+                            Direct Line: 952.449.1088 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-900/30 border-t border-slate-800/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest">
+                    Expert Solutions
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">Our Primary Services</h2>
+                <p class="text-slate-400 text-base">Comprehensive electrical solutions engineered for homes, commercial facilities, and custom builders.</p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl font-bold mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Residential Remodel</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Tailored wiring, lighting design, and circuit upgrades for high-end home remodels and additions.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl font-bold mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">New Construction</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">End-to-end electrical layout, main panel installations, and safety code compliance for new builds.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl font-bold mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Repair & Maintenance</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Fast troubleshooting, faulty wiring repairs, breaker replacements, and preventative maintenance.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-panel p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl font-bold mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Commercial Projects</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Commercial electrical infrastructure, heavy power feeds, LED retrofit, and tenant build-outs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-amber-500/30 p-8 sm:p-14 relative overflow-hidden shadow-2xl">
+                <div class="max-w-3xl relative z-10">
+                    <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest">
+                        Why Choose Us
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-6">
+                        Decades of Trusted Workmanship & Integrity
+                    </h2>
+                    <p class="text-slate-300 mb-8 leading-relaxed text-base sm:text-lg">
+                        Modern electrical systems demand precision and high-grade safety standards. With JDP Electric, you deal directly with experienced journeymen who treat your property with complete care.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-semibold text-slate-200">
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400 text-lg"></i> 90+ Combined Years Experience</div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400 text-lg"></i> Thorough Safety Standards</div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400 text-lg"></i> Top Quality Brands & Hardware</div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400 text-lg"></i> Clear, Upfront Communication</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Request Callback Form -->
+    <section id="contact" class="py-24 bg-slate-900/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Info Column -->
+                <div>
+                    <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-widest">
+                        Get In Touch
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-6">Ready to Start Your Project?</h2>
+                    <p class="text-slate-300 mb-8 leading-relaxed">
+                        Fill out the callback request form or give us a direct call. Our master electricians are ready to help.
+                    </p>
+
+                    <div class="space-y-6">
+                        <a href="tel:9524491088" class="flex items-center gap-4 p-5 rounded-2xl glass-panel border border-slate-800 hover:border-amber-500/50 transition-colors group">
+                            <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 uppercase font-semibold">Direct Phone</div>
+                                <div class="text-xl font-extrabold text-white group-hover:text-amber-400 transition-colors">952.449.1088</div>
+                            </div>
+                        </a>
+
+                        <a href="mailto:info@jdpelectric.us" class="flex items-center gap-4 p-5 rounded-2xl glass-panel border border-slate-800 hover:border-amber-500/50 transition-colors group">
+                            <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 uppercase font-semibold">Email Us</div>
+                                <div class="text-xl font-extrabold text-white group-hover:text-amber-400 transition-colors">info@jdpelectric.us</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl relative">
+                    <h3 class="text-2xl font-bold text-white mb-6">Request A Fast Callback</h3>
+                    <form id="contactForm" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Your Name</label>
+                            <input type="text" required class="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors" placeholder="John Smith">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Phone Number</label>
+                            <input type="tel" required class="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors" placeholder="952-000-0000">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Project Details</label>
+                            <textarea rows="4" required class="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors" placeholder="Tell us about your electrical service needs..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 text-slate-950 font-extrabold py-4 rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] transition-all">
+                            Submit Callback Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950 font-black">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <span class="text-xl font-extrabold text-white">JDP Electric</span>
+            </div>
+            <div>
+                © 2026 JDP Electric. All Rights Reserved. Licensed & Insured.
+            </div>
+            <div class="flex items-center gap-6 font-semibold">
+                <a href="#about" class="hover:text-amber-400 transition-colors">About</a>
+                <a href="#services" class="hover:text-amber-400 transition-colors">Services</a>
+                <a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggleBtn = document.getElementById('menuToggleBtn');
+            const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const mobileBackdrop = document.getElementById('mobileBackdrop');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const contactForm = document.getElementById('contactForm');
+
+            // Open Sidebar Function
+            function openSidebar() {
+                mobileSidebar.classList.remove('translate-x-full');
+                mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+                menuToggleBtn.classList.add('menu-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close Sidebar Function
+            function closeSidebar() {
+                mobileSidebar.classList.add('translate-x-full');
+                mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
+                menuToggleBtn.classList.remove('menu-open');
+                document.body.style.overflow = '';
+            }
+
+            // Toggle logic
+            menuToggleBtn.addEventListener('click', () => {
+                if (mobileSidebar.classList.contains('translate-x-full')) {
+                    openSidebar();
+                } else {
+                    closeSidebar();
+                }
+            });
+
+            closeSidebarBtn.addEventListener('click', closeSidebar);
+            mobileBackdrop.addEventListener('click', closeSidebar);
+
+            // Close sidebar when clicking any mobile menu link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeSidebar);
+            });
+
+            // Handle Contact Form Submit Feedback
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Thank you! Your callback request has been received. JDP Electric will contact you shortly.');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
